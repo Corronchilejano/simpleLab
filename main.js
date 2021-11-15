@@ -9,27 +9,27 @@ function palindromo(cadena)
 
 function botonPalindromo()
 {
-    cadena = document.getElementById("TBCadena").value.toString()
-    resultado = palindromo(cadena)
-    document.getElementById("TBSalidaPalindromo").value = palindromo(cadena)
+    cadena = document.getElementById("TBCadena").value.toString();
+    resultado = palindromo(cadena);
+    document.getElementById("TBSalidaPalindromo").value = palindromo(cadena);
 }
 
 function mayor(n1,n2)
 {
-    if(isNaN(n1) || isNaN(n2)) return "Ingrese números por favor"
-    mayor = 0
-    if(n1 > n2) mayor = n1
-    else if (n2>n1) mayor = n2
-    else mayor = "Son iguales"    
-    return mayor
+    if(isNaN(n1) || isNaN(n2)) return "Ingrese números por favor";
+    mayor = 0;
+    if(n1 > n2) mayor = n1;
+    else if (n2>n1) mayor = n2;
+    else mayor = "Son iguales";   
+    return mayor;
 }
 
 function botonNumeroMayor()
 {
-    n1 = parseInt(document.getElementById("TBNumero1").value)
-    n2 = parseInt(document.getElementById("TBNumero2").value)
-    retorno = mayor(n1,n2)
-    document.getElementById("TBSalidaMayor").value = retorno
+    n1 = parseInt(document.getElementById("TBNumero1").value);
+    n2 = parseInt(document.getElementById("TBNumero2").value);
+    retorno = mayor(n1,n2);
+    document.getElementById("TBSalidaMayor").value = retorno;
 }
 
 function vocales(cadena)
