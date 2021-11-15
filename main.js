@@ -94,7 +94,7 @@ function MostrarContenidos()
             document.getElementById("TAContenido").innerHTML = "Página no encontrada.";
         }
     };
-    xhttp.open("GET", document.getElementById("TAEncabezado").value, true);
+    xhttp.open("GET", document.getElementById("TBURL").value, true);
     xhttp.send();
 }
 
