@@ -69,10 +69,10 @@ function botonCantidadVocales()
     cadena = document.getElementById("TBEntradaCantidadVocales").value;
     retorno = cantidadVocales(cadena);
     document.getElementById("TBSalidaVocalesA").value = retorno[0];
-    document.getElementById("TBSalidaVocalesB").value = retorno[1];
-    document.getElementById("TBSalidaVocalesC").value = retorno[2];
-    document.getElementById("TBSalidaVocalesD").value = retorno[3];
-    document.getElementById("TBSalidaVocalesE").value = retorno[4];
+    document.getElementById("TBSalidaVocalesE").value = retorno[1];
+    document.getElementById("TBSalidaVocalesI").value = retorno[2];
+    document.getElementById("TBSalidaVocalesO").value = retorno[3];
+    document.getElementById("TBSalidaVocalesU").value = retorno[4];
 }
 
 function CarguePagina()
