@@ -88,6 +88,11 @@ function MostrarContenidos()
             document.getElementById("TAEncabezado").innerHTML = xhttp.getAllResponseHeaders();
             document.getElementById("TAContenido").innerHTML = xhttp.responseText;
         }
+        elseif (this.status == 404) 
+        {
+            document.getElementById("TAEncabezado").innerHTML = "Página no encontrada.";
+            document.getElementById("TAContenido").innerHTML = "Página no encontrada.";
+        }
     };
     xhttp.open("GET", TBURL, true);
     xhttp.send();
