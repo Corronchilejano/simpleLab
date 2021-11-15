@@ -17,11 +17,11 @@ function botonPalindromo()
 function mayor(n1,n2)
 {
     if(isNaN(n1) || isNaN(n2)) return "Ingrese números por favor";
-    mayor = 0;
-    if(n1 > n2) mayor = n1;
-    else if (n2>n1) mayor = n2;
-    else mayor = "Son iguales";   
-    return mayor;
+    retorno = 0;
+    if(n1 > n2) retorno = n1;
+    else if (n2>n1) retorno = n2;
+    else retorno = "Son iguales";   
+    return retorno;
 }
 
 function botonNumeroMayor()
@@ -36,46 +36,48 @@ function vocales(cadena)
 {
     const vocales = ["A","E","I","O","U"];
     letras = cadena.split("");
-    listaVocales = ""
-    letras.forEach(letra => {
-        if(vocales.includes(letra.toUpperCase())) listaVocales += letra
+    listaVocales = "";
+    letras.forEach(letra => 
+    {
+        if(vocales.includes(letra.toUpperCase())) listaVocales += letra;
     });
     return listaVocales;        
 }
 
 function botonVocales()
 {
-    cadena = document.getElementById("TBEntradaVocales").value
-    retorno = vocales(cadena)
-    document.getElementById("TBSalidaVocales").value = retorno
+    cadena = document.getElementById("TBEntradaVocales").value;
+    retorno = vocales(cadena);
+    document.getElementById("TBSalidaVocales").value = retorno;
 }
 
 function cantidadVocales(cadena)
 {
-    cadenaVocales = "AEIOU"
-    const cantidadVocales = [0,0,0,0,0]
+    cadenaVocales = "AEIOU";
+    const cantidadVocales = [0,0,0,0,0];
     letras = cadena.split("");
-    letras.forEach(letra => {
-        numeroLetra = cadenaVocales.indexOf(letra.toUpperCase())
-        if(numeroLetra > -1) cantidadVocales[numeroLetra]++
+    letras.forEach(letra => 
+    {
+        numeroLetra = cadenaVocales.indexOf(letra.toUpperCase());
+        if(numeroLetra > -1) cantidadVocales[numeroLetra]++;
     });
     return cantidadVocales;
 }
 
 function botonCantidadVocales()
 {
-    cadena = document.getElementById("TBEntradaCantidadVocales").value
-    retorno = cantidadVocales(cadena)
-    document.getElementById("TBSalidaVocalesA").value = retorno[0]
-    document.getElementById("TBSalidaVocalesB").value = retorno[1]
-    document.getElementById("TBSalidaVocalesC").value = retorno[2]
-    document.getElementById("TBSalidaVocalesD").value = retorno[3]
-    document.getElementById("TBSalidaVocalesE").value = retorno[4]
+    cadena = document.getElementById("TBEntradaCantidadVocales").value;
+    retorno = cantidadVocales(cadena);
+    document.getElementById("TBSalidaVocalesA").value = retorno[0];
+    document.getElementById("TBSalidaVocalesB").value = retorno[1];
+    document.getElementById("TBSalidaVocalesC").value = retorno[2];
+    document.getElementById("TBSalidaVocalesD").value = retorno[3];
+    document.getElementById("TBSalidaVocalesE").value = retorno[4];
 }
 
 function CarguePagina()
 {
-    document.getElementById("TBURL").value = window.location.href
+    document.getElementById("TBURL").value = window.location.href;
 }
 
 function MostrarContenidos()
@@ -83,7 +85,7 @@ function MostrarContenidos()
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() 
     {
-        document.getElementById("TEstado").value = DevolverEstado(this.readyState)
+        document.getElementById("TEstado").value = DevolverEstado(this.readyState);
         if (this.readyState == 4 && this.status == 200) 
         {
             document.getElementById("TAEncabezado").innerHTML = xhttp.getAllResponseHeaders();
@@ -118,7 +120,7 @@ function DevolverEstado(estado)
         break;
         case 4:
         retorno = "4 - Petición terminada";
-        break;        
+        break;   
     }
     return retorno;
 }
