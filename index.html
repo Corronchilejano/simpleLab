@@ -2,7 +2,8 @@
     <title>Segundo Laboratorio Desarrollo de Aplicaciones en Red</title>
     <script src="main.js"></script>
 </head>
-<body>
+<body onload="CarguePagina()">
+    <h1>Javascript</h1>
     <p>Ejercicio 1: Palindromos<br>
         <label>Cadena de entrada</label>
         <input type="text" id="TBCadena"/>
@@ -33,5 +34,17 @@
         <label>C</label><input type="text" id="TBSalidaVocalesC" disabled="true"/>
         <label>D</label><input type="text" id="TBSalidaVocalesD" disabled="true"/>
         <label>E</label><input type="text" id="TBSalidaVocalesE" disabled="true"/>
+    </p>
+    <h1>Ajax</h1>
+    <p>Ejercicios con Ajax<br>
+        <label>URL</label><br>
+        <input type="text" id="TBURL" size="50"/><br>
+        <label>Estado de Peticion</label><br>
+        <input type="text" id="TEstado" size="50" disabled="true"/><br>
+        <input type="button" id="BMostrar" value="Mostrar Contenido" onclick="MostrarContenidos()"/><br>
+        <label>Encabezados</label><br>
+        <textarea id="TAEncabezado" cols="100" rows="20"></textarea><br>
+        <label>Contenido</label><br>
+        <textarea id="TAContenido" cols="100" rows="20"></textarea><br>
     </p>
 </body>

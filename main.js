@@ -71,3 +71,48 @@ function botonCantidadVocales()
     document.getElementById("TBSalidaVocalesD").value = retorno[3]
     document.getElementById("TBSalidaVocalesE").value = retorno[4]
 }
+
+function CarguePagina()
+{
+    document.getElementById("TBURL").value = window.location.href
+}
+
+function MostrarContenidos()
+{
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() 
+    {
+        document.getElementById("TEstado").value = DevolverEstado(this.readyState)
+        if (this.readyState == 4 && this.status == 200) 
+        {
+            document.getElementById("TAEncabezado").innerHTML = xhttp.getAllResponseHeaders();
+            document.getElementById("TAContenido").innerHTML = xhttp.responseText;
+        }
+    };
+    xhttp.open("GET", TBURL, true);
+    xhttp.send();
+}
+
+function DevolverEstado(estado)
+{
+    retorno = "";
+    switch(estado)
+    {
+        case 0:
+        retorno = "0 - Petición no enviada aún";
+        break;
+        case 1:
+        retorno = "1 - Conexión establecida";
+        break;
+        case 2:
+        retorno = "2 - Petición recibida";
+        break;
+        case 3:
+        retorno = "3 - Procesando petición";
+        break;
+        case 4:
+        retorno = "4 - Petición terminada";
+        break;        
+    }
+    return retorno;
+}
