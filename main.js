@@ -1,5 +1,6 @@
 function palindromo(cadena)
 {
+    cadena = cadena.toUpperCase().trim();
     cadena = cadena.replace(/\s+/g, '');
     reverso = cadena.split("").reverse().join("");
     if(cadena == reverso) return "Palíndromo";
